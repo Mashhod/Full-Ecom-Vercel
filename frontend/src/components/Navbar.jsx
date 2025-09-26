@@ -74,25 +74,31 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="nav-link">
+            <Link to="/" className={`nav-link ${!state.isLogin ? "disabled" : ""}`}
+>
               Home
             </Link>
-            <Link to="/shop" className="nav-link">
+            <Link to="/shop" className={`nav-link ${!state.isLogin ? "disabled" : ""}`}
+>
               Shop
             </Link>
-            <Link to="/about" className="nav-link">
+            <Link className={`nav-link ${!state.isLogin ? "disabled" : ""}`}
+>
               About
             </Link>
-            <Link to="/contact" className="nav-link">
+            <Link to="/contact" className={`nav-link ${!state.isLogin ? "disabled" : ""}`}
+>
               Contact
             </Link>
 
             {state?.user?.user_role === 1 ? (
               <>
-                <Link to="/add-product" className="nav-link">
+                <Link to="/add-product" className={`nav-link ${!state.isLogin ? "disabled" : ""}`}
+>
                   Add Product
                 </Link>
-                <Link to="/add-category" className="nav-link">
+                <Link to="/add-category" className={`nav-link ${!state.isLogin ? "disabled" : ""}`}
+>
                   Add Category
                 </Link>
               </>
@@ -209,28 +215,29 @@ const Navbar = () => {
             <div className="flex flex-col space-y-2 pt-4">
               <Link
                 to="/"
-                className="nav-link py-2"
+                className={`nav-link py-2 ${!state.isLogin ? "disabled" : ""}`}
+
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/shop"
-                className="nav-link py-2"
+                className={`nav-link py-2 ${!state.isLogin ? "disabled" : ""}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Shop
               </Link>
               <Link
                 to="/about"
-                className="nav-link py-2"
+                className={`nav-link py-2 ${!state.isLogin ? "disabled" : ""}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 to="/contact"
-                className="nav-link py-2"
+                className={`nav-link py-2 ${!state.isLogin ? "disabled" : ""}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -239,14 +246,14 @@ const Navbar = () => {
                 <>
                   <Link
                     to="/add-product"
-                    className="nav-link py-2"
+                className={`nav-link py-2 ${!state.isLogin ? "disabled" : ""}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Add Product
                   </Link>
                   <Link
                     to="/add-category"
-                    className="nav-link py-2"
+                className={`nav-link py-2 ${!state.isLogin ? "disabled" : ""}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Add Category
