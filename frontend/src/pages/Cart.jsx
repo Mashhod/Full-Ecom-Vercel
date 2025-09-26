@@ -8,7 +8,7 @@ import api from '../components/api';
 import Cookies from "js-cookie"; // ya react-cookie
 import { GlobalContext } from '../context/Context';
 
-const stripePromise = loadStripe("pk_test_51S983pCEInFm1ZnGdKCYxGMiNy0mJSGywsqy5YpJ1TzXnNM4PHPN9t8i6E83WDRUQUYHxy7VwWFsLbEIBMjX4Rt700kS4QE7OP"); // publishable key
+const stripePromise = loadStripe("pk_test_51S9884Fv5W6KJgRuWygm8yyp9ec16loUOiugghzoh0JPiuK5VAgMMooWfmqIdapegP3HMfcYT43wo9RK0BEZSxTU00cTJnK8UK");
 
 
 const Cart = () => {
@@ -21,10 +21,10 @@ const [loading, setLoading] = useState(false);
 let {state} = useContext(GlobalContext)
 
 let baseUrl = state.baseURL
+console.log("baseUrl", baseUrl)
 
 
 
-const stripePromise = loadStripe("pk_test_51S9884Fv5W6KJgRuWygm8yyp9ec16loUOiugghzoh0JPiuK5VAgMMooWfmqIdapegP3HMfcYT43wo9RK0BEZSxTU00cTJnK8UK");
 
 
 // const handleCheckout = async () => {
