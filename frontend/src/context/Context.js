@@ -36,7 +36,7 @@ let data = {
     user: {},
     isLogin: null,
     isLoading:true,
-    baseURL: window.location.href.split(":")[0] == "http" ? "http://localhost:5004/api/v1" : "/api/v1",}
+    baseURL: window.location.href.split(":")[0] == "http" ? "http://localhost:5004/api/v1" : "https://full-ecom-vercel-tau.vercel.app//api/v1",}
 
 }
 
