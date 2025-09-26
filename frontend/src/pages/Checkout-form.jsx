@@ -2,9 +2,6 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { useState, useContext } from 'react';
 import api from '../components/api';
 import { GlobalContext } from '../context/Context';
-import { useContext, useState } from 'react';
-import api from '../components/api';
-import { GlobalContext } from '../context/Context';
 
 export default function CheckoutForm() {
   const stripe = useStripe();

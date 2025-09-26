@@ -3,7 +3,7 @@ import './App.css';
 
 import { GlobalContext } from './context/Context.js';
 import { useContext, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import api from './components/api.js';
 
 // import { AddProduct } from './pages/add-product.jsx';
@@ -122,7 +122,7 @@ const location = useLocation()
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/" element={<Login />} />
-    <Route path="*" element={<Navigate to={'/login'} />} />
+      <Route path="*" element={<Navigate to={'/login'} />} />
     </>
   )}
 </Routes>

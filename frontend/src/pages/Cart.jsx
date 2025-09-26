@@ -1,5 +1,3 @@
-
-import React, { useState, useContext } from 'react'
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Plus, Minus, Trash2, ArrowLeft } from 'lucide-react';
@@ -22,8 +20,9 @@ const [loading, setLoading] = useState(false);
 
 let {state} = useContext(GlobalContext)
 
-  
-let basUrl = state.basURL
+let baseUrl = state.baseURL
+
+
 
 const stripePromise = loadStripe("pk_test_51S9884Fv5W6KJgRuWygm8yyp9ec16loUOiugghzoh0JPiuK5VAgMMooWfmqIdapegP3HMfcYT43wo9RK0BEZSxTU00cTJnK8UK");
 
@@ -65,7 +64,7 @@ const handleCheckout = async () => {
     //   })),
     // };
     // console.log("🛒 CART Items (frontend):", bodyData);
-    const response = await fetch(`${basUrl}/create-checkout-session`, {
+    const response = await fetch(`${baseUrl}/create-checkout-session`, {
       method: "POST",
       credentials: "include",
       headers: {
