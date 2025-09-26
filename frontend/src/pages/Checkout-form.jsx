@@ -1,11 +1,17 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import api from '../components/api';
+import { GlobalContext } from '../context/Context';
+
 
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
   const [status, setStatus] = useState("");
+
+  let {state} = useContext(GlobalContext)
+
+  let baseUrl = state.baseURL
 
   const handleSubmit = async (e) => {
     e.preventDefault();
