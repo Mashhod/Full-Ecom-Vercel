@@ -357,7 +357,7 @@ app.post("/api/v1/create-checkout-session", verifyToken, async (req, res) => {
     }
   });
     
-  app.post('/api/v1/create-payment-intent', async (req, res) => {
+  app.post('/create-payment-intent', async (req, res) => {
     const { amount } = req.body;
   
     const paymentIntent = await stripe.paymentIntents.create({
