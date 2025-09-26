@@ -36,9 +36,7 @@ let data = {
     user: {},
     isLogin: null,
     isLoading:true,
-    baseURL: window.location.href.split(":")[0] == "http" ? "http://localhost:5004/api/v1" : /api/v1",}
-
-}
+    baseURL: window.location.href.split(":")[0] == "http" ? "http://localhost:5004/api/v1" : "/api/v1",}
 
 export const GlobalContext = createContext(data);
 console.log('global ', GlobalContext);

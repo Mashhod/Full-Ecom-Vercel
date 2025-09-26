@@ -107,6 +107,7 @@ const location = useLocation()
       <Route path="/cart" element={<Cart />} />
       <Route path="/about" element={<AboutUs />} />
       <Route path="/contact" element={<ContactUs />} />
+      <Route path="*" element={<Navigate to={'/home'} />} />
 
       {/* Extra routes only for role 1 */}
       {state?.user?.user_role === 1 && (
@@ -121,6 +122,7 @@ const location = useLocation()
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/" element={<Login />} />
+    <Route path="*" element={<Navigate to={'/login'} />} />
     </>
   )}
 </Routes>

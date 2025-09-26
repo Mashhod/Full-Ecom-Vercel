@@ -1,4 +1,6 @@
-import React, { useState, useContext } from 'react';
+
+import React, { useState, useContext } from 'react'
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Plus, Minus, Trash2, ArrowLeft } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -7,7 +9,6 @@ import { Elements } from '@stripe/react-stripe-js';
 import api from '../components/api';
 import Cookies from "js-cookie"; // ya react-cookie
 import { GlobalContext } from '../context/Context';
-
 
 const stripePromise = loadStripe("pk_test_51S983pCEInFm1ZnGdKCYxGMiNy0mJSGywsqy5YpJ1TzXnNM4PHPN9t8i6E83WDRUQUYHxy7VwWFsLbEIBMjX4Rt700kS4QE7OP"); // publishable key
 
@@ -21,8 +22,8 @@ const [loading, setLoading] = useState(false);
 
 let {state} = useContext(GlobalContext)
 
-let basUrl = state.basURL  
   
+let basUrl = state.basURL
 
 const stripePromise = loadStripe("pk_test_51S9884Fv5W6KJgRuWygm8yyp9ec16loUOiugghzoh0JPiuK5VAgMMooWfmqIdapegP3HMfcYT43wo9RK0BEZSxTU00cTJnK8UK");
 

@@ -2,7 +2,9 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { useState, useContext } from 'react';
 import api from '../components/api';
 import { GlobalContext } from '../context/Context';
-
+import { useContext, useState } from 'react';
+import api from '../components/api';
+import { GlobalContext } from '../context/Context';
 
 export default function CheckoutForm() {
   const stripe = useStripe();
@@ -18,7 +20,7 @@ export default function CheckoutForm() {
 
     setStatus("Processing...");
 
-    const response = await fetch("http://localhost:5004/api/v1/create-payment-intent", {
+    const response = await fetch(`${baseUrl}/create-payment-intent`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: 1000 }), // $10
