@@ -30,7 +30,7 @@ app.use(bodyParser.json())
     // }))
     
     app.use(cors({
-    origin: ['http://localhost:3000', https://myshophub.vercel.app],
+    origin: ['http://localhost:3000', 'https://myshophub.vercel.app'],
     credentials: true
 }));
 
