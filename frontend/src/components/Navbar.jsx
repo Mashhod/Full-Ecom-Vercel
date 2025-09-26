@@ -209,26 +209,27 @@ const Navbar = () => {
             <div className="flex flex-col space-y-2 pt-4">
               <Link
                 to="/"
-                className={`nav-link  py-2 ${!state.isLogin ? "disabled" : ""}`}                onClick={() => setIsMenuOpen(false)}
+                className={`nav-link  py-2 ${!state.isLogin ? "disabled" : ""}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/shop"
                 onClick={() => setIsMenuOpen(false)}
-              >
+                className={`nav-link  py-2 ${(!state.isLogin) ? "disabled" : ""}`} >               
                 Shop
               </Link>
               <Link
                 to="/about"
-                className="nav-link py-2"
+                className={`nav-link  py-2 ${!state.isLogin ? "disabled" : ""}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 to="/contact"
-                className="nav-link py-2"
+                className={`nav-link  py-2 ${!state.isLogin ? "disabled" : ""}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -237,14 +238,14 @@ const Navbar = () => {
                 <>
                   <Link
                     to="/add-product"
-                    className="nav-link py-2"
+                    className={`nav-link  py-2 ${!state.isLogin ? "disabled" : ""}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Add Product
                   </Link>
                   <Link
                     to="/add-category"
-                    className="nav-link py-2"
+                    className={`nav-link  py-2 ${!state.isLogin ? "disabled" : ""}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Add Category
