@@ -6,6 +6,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import api from '../components/api';
 import Cookies from "js-cookie"; // ya react-cookie
+import { GlobalContext } from '../context/Context';
+
 
 const stripePromise = loadStripe("pk_test_51S983pCEInFm1ZnGdKCYxGMiNy0mJSGywsqy5YpJ1TzXnNM4PHPN9t8i6E83WDRUQUYHxy7VwWFsLbEIBMjX4Rt700kS4QE7OP"); // publishable key
 
@@ -17,6 +19,10 @@ console.log("getCartTotal", getCartTotal)
 
 const [loading, setLoading] = useState(false);
 
+let {state} = useContext(GlobalContext)
+
+let basUrl = state.basURL  
+  
 
 const stripePromise = loadStripe("pk_test_51S9884Fv5W6KJgRuWygm8yyp9ec16loUOiugghzoh0JPiuK5VAgMMooWfmqIdapegP3HMfcYT43wo9RK0BEZSxTU00cTJnK8UK");
 
@@ -58,7 +64,7 @@ const handleCheckout = async () => {
     //   })),
     // };
     // console.log("🛒 CART Items (frontend):", bodyData);
-    const response = await fetch("http://localhost:5004/api/v1/create-checkout-session", {
+    const response = await fetch(`${basUrl}/create-checkout-session`, {
       method: "POST",
       credentials: "include",
       headers: {
